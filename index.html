@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebra Decorações e Festas - Kits Pegue e Monte e Decorações</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- SCRIPT ANTI-FLASH PARA DARK MODE -->
+    <script>
+        // Sempre inicia no modo claro e só muda com o clique, evitando o "flash".
+        localStorage.removeItem('color-theme');
+        document.documentElement.classList.remove('dark');
+    </script>
+
+    <!-- Configuração Customizada -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'celebra-rose': '#C8A2A3',
+                        'celebra-offwhite': '#FDFBF7',
+                        'celebra-bege': '#F5EEE6',
+                        'celebra-dourado': '#A98C57',
+                        'celebra-text': '#5D504A',
+                        'celebra-vibrant-rose': '#D53F8C',
+                        'dark-bg': '#1a1a1a',
+                        'dark-card': '#242424',
+                        'dark-text': '#EAEAEA',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(135deg, #D53F8C, #A98C57); /* Gradiente de rosa vibrante para dourado */
+        }
+        .text-shadow-custom {
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        /* Estilo do botão de filtro ativo */
+        .filter-btn.active {
+            background-color: #A98C57; /* celebra-dourado */
+            color: white;
+        }
+        .dark .filter-btn.active {
+             background-color: #D53F8C; /* celebra-vibrant-rose */
+        }
+    </style>
+</head>
+<body class="bg-celebra-offwhite dark:bg-dark-bg text-celebra-text dark:text-dark-text font-sans transition-colors duration-300">
+
+    <!-- Header -->
+    <header id="home" class="bg-white/80 dark:bg-dark-bg/80 backdrop-blur-lg shadow-sm sticky top-0 left-0 right-0 z-50 transition-colors duration-300">
+        <div class="container mx-auto px-6 h-24 flex justify-between items-center">
+            <a href="#home">
+                <img src="./assets/logo/logo.svg" alt="Logo Celebra Decorações" class="h-16 w-auto">
+            </a>
+            <div class="flex items-center space-x-4">
+                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold tracking-wider uppercase">
+                    <a href="#portfolio" class="hover:text-celebra-dourado transition-colors">Galeria</a>
+                    <a href="#kits" class="hover:text-celebra-dourado transition-colors">Kits</a>
+                    <a href="#comoreservar" class="hover:text-celebra-dourado transition-colors">Como Reservar</a>
+                    <a href="#about" class="hover:text-celebra-dourado transition-colors">Sobre</a>
+                </nav>
+                
+                <a href="https://wa.me/5513988322442?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="bg-celebra-vibrant-rose text-white px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow hidden sm:inline-block text-sm font-bold">
+                    Orçamento
+                </a>
+                
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <i id="theme-toggle-dark-icon" class="hidden text-celebra-dourado" data-lucide="moon"></i>
+                    <i id="theme-toggle-light-icon" class="text-celebra-dourado" data-lucide="sun"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i data-lucide="menu" class="text-celebra-dourado"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-bg py-4 border-t border-gray-200 dark:border-gray-700">
+            <a href="#portfolio" class="block text-center py-2 hover:bg-celebra-bege dark:hover:bg-dark-card">Galeria</a>
+            <a href="#kits" class="block text-center py-2 hover:bg-celebra-bege dark:hover:bg-dark-card">Kits</a>
+            <a href="#comoreservar" class="block text-center py-2 hover:bg-celebra-bege dark:hover:bg-dark-card">Como Reservar</a>
+            <a href="#about" class="block text-center py-2 hover:bg-celebra-bege dark:hover:bg-dark-card">Sobre</a>
+            <div class="mt-4 flex justify-center">
+                <a href="https://wa.me/5513988322442?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="bg-celebra-vibrant-rose text-white px-6 py-2 rounded-full hover:opacity-90 shadow-lg">
+                    Orçamento Rápido
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg h-[60vh] flex flex-col justify-center items-center text-white text-center px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-display text-shadow-custom">Transformamos Sonhos em Festas Inesquecíveis</h1>
+                <p class="mt-4 text-base md:text-lg max-w-2xl mx-auto font-light text-shadow-custom">
+                    Decoração personalizada, pegue e monte, balões e presentes para cada celebração.
+                </p>
+            </div>
+        </section>
+
+        <!-- Galeria de Inspirações -->
+        <section id="portfolio" class="py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-4xl md:text-5xl font-display text-celebra-dourado mb-4">Galeria de Inspirações</h2>
+                     <p class="max-w-2xl mx-auto text-lg">Veja um pouco do nosso trabalho e imagine as possibilidades.</p>
+                </div>
+                <!-- Filtros -->
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+                    <button class="filter-btn active px-4 py-2 text-sm font-semibold border border-gray-200 dark:border-gray-700 rounded-full transition-colors duration-300" data-filter="all">Todos</button>
+                    <button class="filter-btn px-4 py-2 text-sm font-semibold border border-gray-200 dark:border-gray-700 rounded-full transition-colors duration-300" data-filter="infantil">Infantil</button>
+                    <button class="filter-btn px-4 py-2 text-sm font-semibold border border-gray-200 dark:border-gray-700 rounded-full transition-colors duration-300" data-filter="adulto">Adulto</button>
+                    <button class="filter-btn px-4 py-2 text-sm font-semibold border border-gray-200 dark:border-gray-700 rounded-full transition-colors duration-300" data-filter="cha">Chá de Bebê</button>
+                </div>
+
+                <!-- Galeria -->
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="gallery-item group" data-category="adulto"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/designclean/dc-1.jpg" alt="Decoração Clean" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Infantil/Adulto</p><h3 class="font-display text-2xl text-celebra-dourado">Aniversário Clean</h3></div></div>
+                    <div class="gallery-item group" data-category="infantil"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/spiderbaby/spider2.jpg" alt="Decoração Homem-Aranha" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Infantil</p><h3 class="font-display text-2xl text-celebra-dourado">Festa Homem-Aranha</h3></div></div>
+                    <div class="gallery-item group" data-category="infantil"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/cereja/cereja-1.png" alt="Festa Cerejinha" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Infantil/Adulto</p><h3 class="font-display text-2xl text-celebra-dourado">Festa Cerejinha</h3></div></div>
+                    <div class="gallery-item group" data-category="cha"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/baby/baby-1.jpg" alt="Chá de Bebê Borboletas" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Chá de Bebê</p><h3 class="font-display text-2xl text-celebra-dourado">Chá Borboletas</h3></div></div>
+                    <div class="gallery-item group" data-category="infantil"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/bobbiegoods/bg-1.jpg" alt="Decoração Bobbie Goods" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Infantil</p><h3 class="font-display text-2xl text-celebra-dourado">Festa Bobbie Goods</h3></div></div>
+                    <div class="gallery-item group" data-category="cha"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/mesversario/mesversario-2.png" alt="Mêsversário Elefantinho" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Chá de Bebê</p><h3 class="font-display text-2xl text-celebra-dourado">Mêsversário Elefantinho</h3></div></div>
+                    <div class="gallery-item group" data-category="adulto"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/designclean/dc-4.jpg" alt="Detalhes Decoração Clean" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Adulto</p><h3 class="font-display text-2xl text-celebra-dourado">Doces e Flores</h3></div></div>
+                    <div class="gallery-item group" data-category="infantil"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/spiderbaby/spider4.jpg" alt="Detalhes Festa Homem Aranha" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Infantil</p><h3 class="font-display text-2xl text-celebra-dourado">Detalhes do Herói</h3></div></div>
+                    <div class="gallery-item group" data-category="infantil"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/bobbiegoods/bg-2.jpg" alt="Detalhes Bobbie Goods" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Infantil</p><h3 class="font-display text-2xl text-celebra-dourado">Detalhes Fofos</h3></div></div>
+                    <div class="gallery-item group" data-category="cha"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/baby/baby-2.jpg" alt="Detalhes Chá Borboleta" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Chá de Bebê</p><h3 class="font-display text-2xl text-celebra-dourado">Asa de Borboleta</h3></div></div>
+                    <div class="gallery-item group" data-category="infantil"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/spiderbaby/spider1.jpg" alt="Bolo Homem Aranha" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Infantil</p><h3 class="font-display text-2xl text-celebra-dourado">Bolo do Herói</h3></div></div>
+                    <div class="gallery-item group" data-category="infantil"><div class="overflow-hidden rounded-lg shadow-lg"><img src="./assets/galeria/cereja/cereja-2.png" alt="Detalhes Festa Cerejinha" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"></div><div class="pt-4 text-center"><p class="text-xs uppercase tracking-widest text-celebra-rose font-semibold">Infantil/Adulto</p><h3 class="font-display text-2xl text-celebra-dourado">Bolo Cerejinha</h3></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Kits -->
+        <section id="kits" class="py-20 md:py-24 bg-celebra-bege dark:bg-dark-card">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-display text-celebra-dourado mb-4">Kits Pegue e Monte</h2>
+                    <p class="max-w-2xl mx-auto text-lg">Conheça 3 opções incríveis para tornar seu evento inesquecível.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Kit Clássico -->
+                    <div class="bg-white dark:bg-dark-bg rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <h3 class="font-display text-3xl text-celebra-dourado text-center mb-2">Kit Clássico</h3>
+                        <div class="text-center mb-6">
+                            <span class="text-sm line-through text-gray-500">DE R$ 220,00</span>
+                            <p class="text-4xl font-bold text-celebra-vibrant-rose">R$ 200,00</p>
+                        </div>
+                        <ul class="space-y-3 text-sm flex-grow mb-8">
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>Painel redondo com a capa</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>3 Mesas redondas com as capas</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>3 Bandejas</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Boleira</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Bolo fake do tema</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Vaso com arranjo</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>2 Itens decorativos de mesa</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Item decorativo de chão</li>
+                        </ul>
+                        <a href="https://wa.me/5513988322442?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Kit%20Cl%C3%A1ssico." target="_blank" class="mt-auto bg-celebra-dourado text-white text-center font-bold py-3 rounded-lg hover:bg-opacity-90 transition-colors">Solicitar Orçamento</a>
+                    </div>
+                    <!-- Kit Elegante -->
+                    <div class="bg-white dark:bg-dark-bg rounded-lg shadow-lg p-8 flex flex-col border-2 border-celebra-dourado transform md:scale-105 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                         <p class="text-center bg-celebra-dourado text-white text-xs font-bold uppercase py-1 px-4 rounded-full -mt-12 mb-4 mx-auto">Mais Popular</p>
+                        <h3 class="font-display text-3xl text-celebra-dourado text-center mb-2">Kit Elegante</h3>
+                        <div class="text-center mb-6">
+                            <span class="text-sm line-through text-gray-500">DE R$ 260,00</span>
+                            <p class="text-4xl font-bold text-celebra-vibrant-rose">R$ 240,00</p>
+                        </div>
+                        <ul class="space-y-3 text-sm flex-grow mb-8">
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>Painel redondo com a capa</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>3 Mesas redondas com as capas</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Cômoda</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>4 Bandejas e 1 Boleira</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Bolo fake do tema</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>2 Vasos com arranjo</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>3 Itens decorativos de mesa</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>2 Itens decorativos de chão</li>
+                        </ul>
+                        <a href="https://wa.me/5513988322442?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Kit%20Elegante." target="_blank" class="mt-auto bg-celebra-vibrant-rose text-white text-center font-bold py-3 rounded-lg hover:bg-opacity-90 transition-colors">Solicitar Orçamento</a>
+                    </div>
+                    <!-- Kit VIP -->
+                    <div class="bg-white dark:bg-dark-bg rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <h3 class="font-display text-3xl text-celebra-dourado text-center mb-2">Kit VIP</h3>
+                        <div class="text-center mb-6">
+                            <span class="text-sm line-through text-gray-500">DE R$ 330,00</span>
+                            <p class="text-4xl font-bold text-celebra-vibrant-rose">R$ 280,00</p>
+                        </div>
+                        <ul class="space-y-3 text-sm flex-grow mb-8">
+                             <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Painel romano com a capa</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Painel redondo com a capa</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>3 Mesas redondas com as capas</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Cômoda</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>4 Bandejas e 1 Boleira</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>1 Bolo fake do tema</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>2 Vasos com arranjo</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>3 Itens decorativos de mesa</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-celebra-dourado mr-2"></i>2 Itens decorativos de chão</li>
+                        </ul>
+                        <a href="https://wa.me/5513988322442?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Kit%20VIP." target="_blank" class="mt-auto bg-celebra-dourado text-white text-center font-bold py-3 rounded-lg hover:bg-opacity-90 transition-colors">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Reservar -->
+        <section id="comoreservar" class="py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-display text-celebra-dourado mb-4">Como Funciona a Reserva?</h2>
+                    <p class="max-w-2xl mx-auto text-lg">Garantir um dia cheio de encanto é simples e seguro. Veja como:</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center max-w-7xl mx-auto">
+                    <!-- Passo 1 --><div class="flex flex-col items-center"><div class="bg-celebra-bege dark:bg-dark-card rounded-full w-16 h-16 flex items-center justify-center mb-4"><i data-lucide="message-circle" class="w-8 h-8 text-celebra-dourado"></i></div><h3 class="font-bold mb-2">1. Primeiro Contato</h3><p class="text-sm">Conte pra gente qual será a ocasião especial (aniversário, batizado, chá revelação...)</p></div>
+                    <!-- Passo 2 --><div class="flex flex-col items-center"><div class="bg-celebra-bege dark:bg-dark-card rounded-full w-16 h-16 flex items-center justify-center mb-4"><i data-lucide="calendar-check" class="w-8 h-8 text-celebra-dourado"></i></div><h3 class="font-bold mb-2">2. Verificar a Data</h3><p class="text-sm">Verificamos a disponibilidade da data desejada para garantir uma programação sem imprevistos.</p></div>
+                    <!-- Passo 3 --><div class="flex flex-col items-center"><div class="bg-celebra-bege dark:bg-dark-card rounded-full w-16 h-16 flex items-center justify-center mb-4"><i data-lucide="help-circle" class="w-8 h-8 text-celebra-dourado"></i></div><h3 class="font-bold mb-2">3. Tirar Dúvidas</h3><p class="text-sm">Conversamos com carinho para entender o que você sonha e como podemos realizar.</p></div>
+                    <!-- Passo 4 --><div class="flex flex-col items-center"><div class="bg-celebra-bege dark:bg-dark-card rounded-full w-16 h-16 flex items-center justify-center mb-4"><i data-lucide="piggy-bank" class="w-8 h-8 text-celebra-dourado"></i></div><h3 class="font-bold mb-2">4. Confirmação</h3><p class="text-sm">Sua data fica garantida assim que o sinal é confirmado. Com isso, reservamos sua celebração.</p></div>
+                    <!-- Passo 5 --><div class="flex flex-col items-center"><div class="bg-celebra-bege dark:bg-dark-card rounded-full w-16 h-16 flex items-center justify-center mb-4"><i data-lucide="file-text" class="w-8 h-8 text-celebra-dourado"></i></div><h3 class="font-bold mb-2">5. Contrato</h3><p class="text-sm">Você recebe o contrato com todos os detalhes da locação para sua segurança e clareza.</p></div>
+                </div>
+                <div class="text-center mt-16">
+                     <p class="text-xl font-display text-celebra-dourado mb-6">Prontinho! Agora é só contar os dias e deixar com a gente!</p>
+                     <a href="https://wa.me/5513988322442?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="bg-celebra-vibrant-rose text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all shadow-xl transform hover:scale-105 inline-block">
+                        Vamos Começar?
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-24 bg-celebra-bege dark:bg-dark-card">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-display text-celebra-dourado mb-6">Nossa Paixão é Celebrar</h2>
+                    <p class="leading-relaxed text-lg mb-4">
+                        A Celebra Decorações nasceu do amor por criar momentos felizes. Com uma paleta de cores que preza pela sofisticação e delicadeza, materializamos os sonhos dos nossos clientes em eventos únicos.
+                    </p>
+                     <p class="leading-relaxed text-lg">
+                        Cuidamos de cada detalhe, do planejamento à execução, para que sua única preocupação seja aproveitar o momento.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="./assets/galeria/sobre/sobre.png" alt="Detalhes de uma decoração de festa" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Símbolo Section -->
+        <section id="symbol" class="py-20 md:py-24">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <img src="./assets/logo/symbol.svg" alt="Símbolo da Celebra Decorações" class="w-full max-w-xs">
+                </div>
+                <div class="text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-display text-celebra-dourado mb-6">Nosso Símbolo</h2>
+                    <p class="leading-relaxed text-lg">
+                        Nosso símbolo traz a inicial C, representando nossa marca, e um <strong>catavento</strong>, símbolo de movimento, transformação e alegria. Tudo isso dentro de um <strong>arco</strong>, remetendo à harmonia e à união dos elementos em cada celebração.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white dark:bg-dark-bg border-t border-black/5 dark:border-white/5">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center">
+                <img src="./assets/logo/logo.svg" alt="Logo Celebra Decorações" class="h-20 w-auto mb-4 mx-auto">
+                <h3 class="text-3xl font-display text-celebra-dourado">Vamos planejar sua próxima celebração?</h3>
+                <p class="max-w-xl mx-auto my-4">Entregas em Praia Grande/SP e região.</p>
+                <a href="https://wa.me/5513988322442?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="bg-celebra-vibrant-rose text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all shadow-xl transform hover:scale-105 inline-block">
+                    Fale Conosco Pelo WhatsApp
+                </a>
+            </div>
+            <div class="flex justify-center space-x-6 mt-10">
+                <a href="https://www.instagram.com/celebradecoracoesefestas" target="_blank" class="hover:text-celebra-dourado transition-colors">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+                 <a href="https://wa.me/5513988322442" target="_blank" class="hover:text-celebra-dourado transition-colors">
+                    <i data-lucide="smartphone" class="w-6 h-6"></i>
+                 </a>
+            </div>
+            <div class="mt-10 pt-8 border-t border-black/10 dark:border-white/10 text-center text-sm">
+                <p>&copy; <span id="year"></span> Celebra Decorações e Festas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // --- DARK MODE SCRIPT ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function applyThemeIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeToggleLightIcon.classList.remove('hidden');
+                themeToggleDarkIcon.classList.add('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+                themeToggleLightIcon.classList.add('hidden');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+             // Aplica o ícone correto no carregamento da página
+            if (localStorage.getItem('color-theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                 document.documentElement.classList.remove('dark');
+            }
+            applyThemeIcons();
+        });
+        
+
+        themeToggleBtn.addEventListener('click', function() {
+            // toggle icons inside button
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else { // if NOT set via local storage previously
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+
+        // --- MOBILE MENU SCRIPT ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- FOOTER YEAR SCRIPT ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- GALLERY FILTER SCRIPT ---
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                galleryItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filter === 'all' || filter === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
